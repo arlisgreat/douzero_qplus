@@ -16,9 +16,54 @@ from .utils import get_batch, log, create_env, create_buffers, create_optimizers
 
 mean_episode_return_buf = {p:deque(maxlen=100) for p in ['landlord', 'landlord_up', 'landlord_down']}
 
+#均方误差MSE
 def compute_loss(logits, targets):
     loss = ((logits.squeeze(-1) - targets)**2).mean()
     return loss
+
+# #单步学习步骤：数据预处理+前向传播+损失计算+反向传播梯度更新
+# def learn(position,
+#           actor_models,
+#           model,
+#           batch,
+#           optimizer,
+#           flags,
+#           lock):
+#     """Performs a learning (optimization) step."""
+#     if flags.training_device != "cpu":
+#         device = torch.device('cuda:'+str(flags.training_device))
+#     else:
+#         device = torch.device('cpu')
+    
+#     #数据预处理
+#     obs_x_no_action = batch['obs_x_no_action'].to(device)
+#     obs_action = batch['obs_action'].to(device)
+#     obs_x = torch.cat((obs_x_no_action, obs_action), dim=2).float()
+#     obs_x = torch.flatten(obs_x, 0, 1) #obs_x: shape [B, T, F]  -->  shape [B*T, F]
+#     obs_z = torch.flatten(batch['obs_z'].to(device), 0, 1).float()
+#     target = torch.flatten(batch['target'].to(device), 0, 1)
+    
+#     #平均回报存储到缓冲区
+#     episode_returns = batch['episode_return'][batch['done']]
+#     mean_episode_return_buf[position].append(torch.mean(episode_returns).to(device))
+        
+#     with lock:
+#         learner_outputs = model(obs_z, obs_x, return_value=True)
+#         loss = compute_loss(learner_outputs['values'], target)
+#         stats = {
+#             'mean_episode_return_'+position: torch.mean(torch.stack([_r for _r in mean_episode_return_buf[position]])).item(),
+#             'loss_'+position: loss.item(),
+#         }
+        
+#         optimizer.zero_grad()
+#         loss.backward()
+#         nn.utils.clip_grad_norm_(model.parameters(), flags.max_grad_norm) #梯度裁剪
+#         optimizer.step()
+
+#         for actor_model in actor_models.values():
+#             actor_model.get_model(position).load_state_dict(model.state_dict())
+#         return stats #返回损失值和平均回报
+
 
 def learn(position,
           actor_models,
@@ -32,31 +77,54 @@ def learn(position,
         device = torch.device('cuda:'+str(flags.training_device))
     else:
         device = torch.device('cpu')
+    
+    # 数据预处理
     obs_x_no_action = batch['obs_x_no_action'].to(device)
     obs_action = batch['obs_action'].to(device)
     obs_x = torch.cat((obs_x_no_action, obs_action), dim=2).float()
-    obs_x = torch.flatten(obs_x, 0, 1)
+    obs_x = torch.flatten(obs_x, 0, 1) #obs_x: shape [B, T, F]  -->  shape [B*T, F]
     obs_z = torch.flatten(batch['obs_z'].to(device), 0, 1).float()
     target = torch.flatten(batch['target'].to(device), 0, 1)
+    
+    # 处理农民协作奖励
+    farmer_cooperation = None
+    if position in ['landlord_up', 'landlord_down'] and 'farmer_cooperation' in batch:
+        farmer_cooperation = torch.flatten(batch['farmer_cooperation'].to(device), 0, 1)
+        
+        # 协作奖励的权重 (通过flags设置或使用默认值)
+        cooperation_weight = getattr(flags, 'cooperation_weight', 0.3)
+        
+        # 将协作奖励添加到目标
+        if farmer_cooperation is not None:
+            target = target + cooperation_weight * farmer_cooperation
+    
+    # 平均回报存储到缓冲区
     episode_returns = batch['episode_return'][batch['done']]
-    mean_episode_return_buf[position].append(torch.mean(episode_returns).to(device))
+    if len(episode_returns) > 0:  # 避免空张量错误
+        mean_episode_return_buf[position].append(torch.mean(episode_returns).to(device))
         
     with lock:
         learner_outputs = model(obs_z, obs_x, return_value=True)
         loss = compute_loss(learner_outputs['values'], target)
+        
         stats = {
             'mean_episode_return_'+position: torch.mean(torch.stack([_r for _r in mean_episode_return_buf[position]])).item(),
             'loss_'+position: loss.item(),
         }
         
+        # 添加协作奖励统计
+        if position in ['landlord_up', 'landlord_down'] and farmer_cooperation is not None:
+            stats['cooperation_reward_'+position] = torch.mean(farmer_cooperation).item()
+        
         optimizer.zero_grad()
         loss.backward()
-        nn.utils.clip_grad_norm_(model.parameters(), flags.max_grad_norm)
+        nn.utils.clip_grad_norm_(model.parameters(), flags.max_grad_norm) #梯度裁剪
         optimizer.step()
 
         for actor_model in actor_models.values():
             actor_model.get_model(position).load_state_dict(model.state_dict())
         return stats
+
 
 def train(flags):  
     """
@@ -65,6 +133,7 @@ def train(flags):
     Then it will start subprocesses as actors. Then, it will call
     learning function with  multiple threads.
     """
+    #gpu
     if not flags.actor_device_cpu or flags.training_device != 'cpu':
         if not torch.cuda.is_available():
             raise AssertionError("CUDA not available. If you have GPUs, please specify the ID after `--gpu_devices`. Otherwise, please train with CPU with `python3 train.py --actor_device_cpu --training_device cpu`")
@@ -73,12 +142,12 @@ def train(flags):
         xp_args=flags.__dict__,
         rootdir=flags.savedir,
     )
+    #设置检查点
     checkpointpath = os.path.expandvars(
         os.path.expanduser('%s/%s/%s' % (flags.savedir, flags.xpid, 'model.tar')))
 
     T = flags.unroll_length
     B = flags.batch_size
-
     if flags.actor_device_cpu:
         device_iterator = ['cpu']
     else:

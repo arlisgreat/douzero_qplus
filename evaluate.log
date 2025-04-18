@@ -1,0 +1,822 @@
+arl vs ADP
+WP results:
+landlord : Farmers - 0.2391 : 0.7609
+ADP results:s
+landlord : Farmers - -1.643 : 1.643
+
+
+arl vs sl
+WP results:
+landlord : Farmers - 0.314 : 0.686
+ADP results:
+landlord : Farmers - -0.8844 : 0.8844
+
+
+sl vs sl
+WP results:
+landlord : Farmers - 0.405 : 0.595
+ADP results:
+landlord : Farmers - -0.3724 : 0.3724
+
+##########################
+##########################
+#####after revise evaluate
+
+sl vs sl
+WP results:
+landlord : Farmers - 0.405 : 0.595
+ADP results:
+landlord : Farmers - -0.3724 : 0.3724
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 7.97
+Average counter big cards per game: 4.98
+Average successful coordination per game: 9.59
+Average bomb/rocket plays per game: 0.01
+
+Farmer win probability: 0.59
+Coordination level: 7.51
+
+sl vs arl arl
+WP results:
+landlord : Farmers - 0.5087 : 0.4913
+ADP results:
+landlord : Farmers - 0.2234 : -0.2234
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.37
+Average counter big cards per game: 5.79
+Average successful coordination per game: 10.86
+Average bomb/rocket plays per game: 0.09
+
+Farmer win probability: 0.49
+Coordination level: 8.67
+
+
+
+sl vs ADP
+WP results:
+landlord : Farmers - 0.2996 : 0.7004
+ADP results:
+landlord : Farmers - -1.2104 : 1.2104
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.77
+Average counter big cards per game: 5.54
+Average successful coordination per game: 10.48
+Average bomb/rocket plays per game: 0.06
+
+Farmer win probability: 0.70
+Coordination level: 8.27
+
+WP results:
+landlord : Farmers - 0.2996 : 0.7004
+ADP results (得分已按炸弹翻倍、春天翻倍):
+landlord : Farmers - 0.8748 : 2.316
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.77
+Average counter big cards per game: 5.54
+Average successful coordination per game: 1.87
+Average bomb/rocket plays per game: 0.06
+
+Farmer win probability: 0.70
+Coordination level: 5.39
+
+
+sl vs WP
+WP results:
+landlord : Farmers - 0.257 : 0.743
+ADP results:
+landlord : Farmers - -1.095 : 1.095
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.50
+Average counter big cards per game: 5.41
+Average successful coordination per game: 9.61
+Average bomb/rocket plays per game: 0.05
+
+Farmer win probability: 0.74
+Coordination level: 7.84
+
+290054400
+WP results:
+landlord : Farmers - 0.4879 : 0.5121
+ADP results:
+landlord : Farmers - 0.1056 : -0.1056
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.24
+Average counter big cards per game: 5.84
+Average successful coordination per game: 10.75
+Average bomb/rocket plays per game: 0.09
+
+Farmer win probability: 0.51
+Coordination level: 8.61
+nohup: ignoring input
+  pretrained = torch.load(model_path, map_location='cuda:0')
+WP results:
+landlord : Farmers - 0.4956 : 0.5044
+ADP results:
+landlord : Farmers - 0.138 : -0.138
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.25
+Average counter big cards per game: 5.78
+Average successful coordination per game: 10.67
+Average bomb/rocket plays per game: 0.10
+
+Farmer win probability: 0.50
+Coordination level: 8.57
+
+604169600
+nohup: ignoring input
+WP results:
+landlord : Farmers - 0.432 : 0.568
+ADP results:
+landlord : Farmers - -0.3304 : 0.3304
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.10
+Average counter big cards per game: 5.87
+Average successful coordination per game: 10.55
+Average bomb/rocket plays per game: 0.08
+
+Farmer win probability: 0.57
+Coordination level: 8.51
+nohup: ignoring input
+
+WP results:
+landlord : Farmers - 0.439 : 0.561
+ADP results:
+landlord : Farmers - -0.255 : 0.255
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.13
+Average counter big cards per game: 5.83
+Average successful coordination per game: 10.54
+Average bomb/rocket plays per game: 0.08
+
+Farmer win probability: 0.56
+Coordination level: 8.50
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_627734400.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4263 : 0.5737
+ADP results:
+landlord : Farmers - -0.36 : 0.36
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.72
+Average counter big cards per game: 5.39
+Average successful coordination per game: 10.37
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.57
+Coordination level: 8.16
+
+
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up douzero_checkpoints/douzero/landlord_up_weights_627734400.ckpt --landlord_down baselines/sl/landlord_down.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4365 : 0.5635
+ADP results:
+landlord : Farmers - -0.241 : 0.241
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.33
+Average counter big cards per game: 5.47
+Average successful coordination per game: 9.96
+Average bomb/rocket plays per game: 0.07
+
+Farmer win probability: 0.56
+Coordination level: 7.92
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down baselines/sl/landlord_down.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.405 : 0.595
+ADP results:
+landlord : Farmers - -0.3724 : 0.3724
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 7.97
+Average counter big cards per game: 4.98
+Average successful coordination per game: 9.59
+Average bomb/rocket plays per game: 0.01
+
+Farmer win probability: 0.59
+Coordination level: 7.51
+
+
+643446400
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_643446400.ckpt >> evaluate.log 2>&1 &
+nohup: ignoring input
+WP results:
+landlord : Farmers - 0.4241 : 0.5759
+ADP results:
+landlord : Farmers - -0.3408 : 0.3408
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.73
+Average counter big cards per game: 5.33
+Average successful coordination per game: 10.32
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.58
+Coordination level: 8.13
+
+landlord_down_weights_651292800
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_651292800.ckpt >> evaluate.log 2>&1 &nohup: 
+WP results:
+landlord : Farmers - 0.4219 : 0.5781
+ADP results:
+landlord : Farmers - -0.3666 : 0.3666
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.69
+Average counter big cards per game: 5.37
+Average successful coordination per game: 10.27
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.58
+Coordination level: 8.11
+
+landlord_weights_659148800
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_659148800.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4221 : 0.5779
+ADP results:
+landlord : Farmers - -0.3862 : 0.3862
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.74
+Average counter big cards per game: 5.37
+Average successful coordination per game: 10.37
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.58
+Coordination level: 8.16
+
+landlord_down_weights_667001600
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_667001600.ckpt >> evaluate.log 2>&1 &
+nohup: ignoring input
+WP results:
+landlord : Farmers - 0.4209 : 0.5791
+ADP results:
+landlord : Farmers - -0.3908 : 0.3908
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.77
+Average counter big cards per game: 5.40
+Average successful coordination per game: 10.36
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.58
+Coordination level: 8.18
+
+nohup python3 evaluate.py --landlord baselines/douzero_ADP/landlord.ckpt --landlord_up baselines/douzero_ADP/landlord_up.ckpt --landlord_down baselines/douzero_ADP/landlord_down.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4241 : 0.5759
+ADP results:
+landlord : Farmers - -0.4594 : 0.4594
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.65
+Average counter big cards per game: 5.63
+Average successful coordination per game: 9.95
+Average bomb/rocket plays per game: 0.12
+
+Farmer win probability: 0.58
+Coordination level: 8.08
+
+nohup python3 evaluate.py --landlord baselines/douzero_ADP/landlord.ckpt --landlord_up douzero_checkpoints/douzero/landlord_up_weights_667001600.ckpt --landlord_down baselines/douzero_ADP/landlord_down.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.5054 : 0.4946
+ADP results:
+landlord : Farmers - 0.159 : -0.159
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.10
+Average counter big cards per game: 5.72
+Average successful coordination per game: 10.32
+Average bomb/rocket plays per game: 0.13
+
+Farmer win probability: 0.49
+Coordination level: 8.38
+
+nohup python3 evaluate.py --landlord baselines/douzero_ADP/landlord.ckpt --landlord_up baselines/douzero_ADP/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_674860800.ckpt >> evaluate.log 2>&1 &
+
+WP results:
+landlord : Farmers - 0.5076 : 0.4924
+ADP results:
+landlord : Farmers - 0.1616 : -0.1616
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.13
+Average counter big cards per game: 5.67
+Average successful coordination per game: 10.27
+Average bomb/rocket plays per game: 0.13
+
+Farmer win probability: 0.49
+Coordination level: 8.35
+
+
+nohup python3 evaluate.py --landlord baselines/douzero_ADP/landlord.ckpt --landlord_up baselines/douzero_ADP/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_698422400.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.511 : 0.489
+ADP results:
+landlord : Farmers - 0.1716 : -0.1716
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.01
+Average counter big cards per game: 5.65
+Average successful coordination per game: 10.24
+Average bomb/rocket plays per game: 0.13
+Farmer win probability: 0.49
+Coordination level: 8.30
+
+nohup python3 evaluate.py --landlord baselines/douzero_ADP/landlord.ckpt --landlord_up baselines/douzero_ADP/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_706278400.ckpt >> evaluate.log 2> 1 &
+WP results:
+landlord : Farmers - 0.5081 : 0.4919
+ADP results:
+landlord : Farmers - 0.1586 : -0.1586
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.12
+Average counter big cards per game: 5.68
+Average successful coordination per game: 10.24
+Average bomb/rocket plays per game: 0.14
+Farmer win probability: 0.49
+Coordination level: 8.34
+
+
+nohup python3 evaluate.py --landlord baselines/douzero_ADP/landlord.ckpt --landlord_up baselines/douzero_ADP/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_714131200.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.5114 : 0.4886
+ADP results:
+landlord : Farmers - 0.1784 : -0.1784
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.18
+Average counter big cards per game: 5.69
+Average successful coordination per game: 10.34
+Average bomb/rocket plays per game: 0.14
+Farmer win probability: 0.49
+Coordination level: 8.40
+
+nohup python3 evaluate.py --landlord baselines/douzero_ADP/landlord.ckpt --landlord_up baselines/douzero_ADP/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_721984000.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.506 : 0.494
+ADP results:
+landlord : Farmers - 0.1414 : -0.1414
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.06
+Average counter big cards per game: 5.68
+Average successful coordination per game: 10.18
+Average bomb/rocket plays per game: 0.13
+Farmer win probability: 0.49
+Coordination level: 8.31
+
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_721984000.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4257 : 0.5743
+ADP results:
+landlord : Farmers - -0.3644 : 0.3644
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.74
+Average counter big cards per game: 5.36
+Average successful coordination per game: 10.33
+Average bomb/rocket plays per game: 0.02
+
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down baselines/douzero_ADP/landlord_down.ckpt >> evaluate.log 2>&1 &
+Farmer win probability: 0.57
+Coordination level: 8.14
+WP results:
+landlord : Farmers - 0.37 : 0.63
+ADP results:
+landlord : Farmers - -0.7234 : 0.7234
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.26
+Average counter big cards per game: 5.29
+Average successful coordination per game: 10.08
+Average bomb/rocket plays per game: 0.02
+Farmer win probability: 0.63
+Coordination level: 7.88
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down baselines/douzero_WP/landlord_down.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.3454 : 0.6546
+ADP results:
+landlord : Farmers - -0.6842 : 0.6842
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.17
+Average counter big cards per game: 5.15
+Average successful coordination per game: 9.66
+Average bomb/rocket plays per game: 0.01
+
+Farmer win probability: 0.65
+Coordination level: 7.66
+
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_729840000.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4277 : 0.5723
+ADP results:
+landlord : Farmers - -0.3522 : 0.3522
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.69
+Average counter big cards per game: 5.38
+Average successful coordination per game: 10.33
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.57
+Coordination level: 8.13
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up douzero_checkpoints/douzero/landlord_up_weights_729840000.ckpt --landlord_down baselines/sl/landlord_down.ckpt >> evaluate.log 2>&1 &nohup: 
+WP results:
+landlord : Farmers - 0.4265 : 0.5735
+ADP results:
+landlord : Farmers - -0.3048 : 0.3048
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.38
+Average counter big cards per game: 5.44
+Average successful coordination per game: 9.99
+Average bomb/rocket plays per game: 0.07
+Farmer win probability: 0.57
+Coordination level: 7.94
+
+
+753404800
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_753404800.ckpt >> evaluate.log 2>&1 &、、
+WP results:
+landlord : Farmers - 0.4238 : 0.5762
+ADP results:
+landlord : Farmers - -0.3736 : 0.3736
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.78
+Average counter big cards per game: 5.42
+Average successful coordination per game: 10.43
+Average bomb/rocket plays per game: 0.02
+Farmer win probability: 0.58
+Coordination level: 8.21
+
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up douzero_checkpoints/douzero/landlord_up_weights_753404800.ckpt --landlord_down baselines/sl/landlord_down.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4261 : 0.5739
+ADP results:
+landlord : Farmers - -0.29 : 0.29
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.42
+Average counter big cards per game: 5.44
+Average successful coordination per game: 10.03
+Average bomb/rocket plays per game: 0.06
+Farmer win probability: 0.57
+Coordination level: 7.96
+
+989049600
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up douzero_checkpoints/douzero/landlord_up_weights_989049600.ckpt --landlord_down baselines/sl/landlord_down.ckpt >> evaluate.log 2>&1 &
+landlord : Farmers - 0.4305 : 0.5695
+ADP results:
+landlord : Farmers - -0.2878 : 0.2878
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.33
+Average counter big cards per game: 5.51
+Average successful coordination per game: 10.03
+Average bomb/rocket plays per game: 0.07
+Farmer win probability: 0.57
+Coordination level: 7.96
+
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_989049600.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4209 : 0.5791
+ADP results:
+landlord : Farmers - -0.4118 : 0.4118
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.80
+Average counter big cards per game: 5.40
+Average successful coordination per game: 10.45
+Average bomb/rocket plays per game: 0.02
+Farmer win probability: 0.58
+Coordination level: 8.22
+
+996905600
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_996905600.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4202 : 0.5798
+ADP results:
+landlord : Farmers - -0.404 : 0.404
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.74
+Average counter big cards per game: 5.41
+Average successful coordination per game: 10.42
+Average bomb/rocket plays per game: 0.02
+Farmer win probability: 0.58
+Coordination level: 8.19
+
+902649600
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_902649600.ckpt >> evaluate.log 2>&1 &
+nohup: ignoring input
+
+808384000
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_808384000.ckpt >> evaluate.log 2>&1 &
+
+855523200
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_855523200.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4229 : 0.5771
+ADP results:
+landlord : Farmers - -0.3772 : 0.3772
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.75
+Average counter big cards per game: 5.39
+Average successful coordination per game: 10.33
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.58
+Coordination level: 8.16
+WP results:
+landlord : Farmers - 0.4266 : 0.5734
+ADP results:
+landlord : Farmers - -0.3524 : 0.3524
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.75
+Average counter big cards per game: 5.39
+Average successful coordination per game: 10.37
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.57
+Coordination level: 8.17
+WP results:
+landlord : Farmers - 0.4285 : 0.5715
+ADP results:
+landlord : Farmers - -0.3604 : 0.3604
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.67
+Average counter big cards per game: 5.36
+Average successful coordination per game: 10.37
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.57
+Coordination level: 8.13
+
+
+1012617600
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_1012617600.ckpt >> evaluate.log 2>&1 &nohup: ignoring input
+/home/share/yunwang/arl/DouZero/douzero/evaluation/deep_agent.py:11: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  pretrained = torch.load(model_path, map_location='cuda:0')
+/home/share/yunwang/arl/DouZero/douzero/evaluation/deep_agent.py:11: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  pretrained = torch.load(model_path, map_location='cuda:0')
+/home/share/yunwang/arl/DouZero/douzero/evaluation/deep_agent.py:11: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  pretrained = torch.load(model_path, map_location='cuda:0')
+/home/share/yunwang/arl/DouZero/douzero/evaluation/deep_agent.py:11: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  pretrained = torch.load(model_path, map_location='cuda:0')
+/home/share/yunwang/arl/DouZero/douzero/evaluation/deep_agent.py:11: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  pretrained = torch.load(model_path, map_location='cuda:0')
+WP results:
+landlord : Farmers - 0.4236 : 0.5764
+ADP results:
+landlord : Farmers - -0.3808 : 0.3808
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.75
+Average counter big cards per game: 5.36
+Average successful coordination per game: 10.34
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.58
+Coordination level: 8.15
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_1012617600.ckpt >> evaluate.log 2>&1 &
+
+1075472000
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_1075472000.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4161 : 0.5839
+ADP results:
+landlord : Farmers - -0.4284 : 0.4284
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.69
+Average counter big cards per game: 5.37
+Average successful coordination per game: 10.39
+Average bomb/rocket plays per game: 0.02
+Farmer win probability: 0.58
+Coordination level: 8.15
+
+1091180800
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_1091180800.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4195 : 0.5805
+ADP results:
+landlord : Farmers - -0.4144 : 0.4144
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.67
+Average counter big cards per game: 5.40
+Average successful coordination per game: 10.35
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.58
+Coordination level: 8.14
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_1130470400.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4158 : 0.5842
+ADP results:
+landlord : Farmers - -0.4226 : 0.4226
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.67
+Average counter big cards per game: 5.37
+Average successful coordination per game: 10.34
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.58
+Coordination level: 8.13
+
+
+
+WP results:
+landlord : Farmers - 0.4176 : 0.5824
+ADP results:
+landlord : Farmers - -0.4416 : 0.4416
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.65
+Average counter big cards per game: 5.39
+Average successful coordination per game: 10.45
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.58
+Coordination level: 8.16
+
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_1491891200.ckpt >> evaluate.log 2>&1 &
+
+WP results:
+landlord : Farmers - 0.409 : 0.591
+ADP results:
+landlord : Farmers - -0.4794 : 0.4794
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.79
+Average counter big cards per game: 5.37
+Average successful coordination per game: 10.43
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.59
+Coordination level: 8.20
+
+2096016000
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_2096016000.ckpt >> evaluate.log 2>&1 &
+
+WP results:
+landlord : Farmers - 0.4037 : 0.5963
+ADP results:
+landlord : Farmers - -0.5202 : 0.5202
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.71
+Average counter big cards per game: 5.33
+Average successful coordination per game: 10.29
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.60
+Coordination level: 8.11
+
+2127401600
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_2127401600.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4005 : 0.5995
+ADP results:
+landlord : Farmers - -0.5196 : 0.5196
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.66
+Average counter big cards per game: 5.33
+Average successful coordination per game: 10.30
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.60
+Coordination level: 8.10
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up douzero_checkpoints/douzero/landlord_up_weights_2127401600.ckpt --landlord_down  baselines/sl/landlord_down.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.4065 : 0.5935
+ADP results:
+landlord : Farmers - -0.4502 : 0.4502
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.32
+Average counter big cards per game: 5.43
+Average successful coordination per game: 10.02
+Average bomb/rocket plays per game: 0.06
+Farmer win probability: 0.59
+Coordination level: 7.92
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/douzero_ADP/landlord_up.ckpt  --landlord_down  baselines/sl/landlord_down.ckpt >> evaluate.log 2>&1 &
+
+WP results:
+landlord : Farmers - 0.3595 : 0.6405
+ADP results:
+landlord : Farmers - -0.7292 : 0.7292
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.35
+Average counter big cards per game: 5.30
+Average successful coordination per game: 9.98
+Average bomb/rocket plays per game: 0.05
+
+Farmer win probability: 0.64
+Coordination level: 7.87
+
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt  --landlord_down  baselines/douzero_ADP/landlord_down.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.37 : 0.63
+ADP results:
+landlord : Farmers - -0.7234 : 0.7234
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.26
+Average counter big cards per game: 5.29
+Average successful coordination per game: 10.08
+Average bomb/rocket plays per game: 0.02
+
+Farmer win probability: 0.63
+Coordination level: 7.88
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up douzero_checkpoints/douzero/landlord_up_weights_2127401600.ckpt --landlord_down douzero_checkpoints/douzero/landlord_down_weights_2127401600.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.3834 : 0.6166
+ADP results:
+landlord : Farmers - -0.6666 : 0.6666
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.05
+Average counter big cards per game: 5.72
+Average successful coordination per game: 10.55
+Average bomb/rocket plays per game: 0.06
+
+Farmer win probability: 0.62
+Coordination level: 8.44
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/douzero_ADP/landlord_up.ckpt --landlord_down  baselines/douzero_ADP/landlord_down.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.2996 : 0.7004
+ADP results:
+landlord : Farmers - -1.2104 : 1.2104
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.77
+Average counter big cards per game: 5.54
+Average successful coordination per game: 10.48
+Average bomb/rocket plays per game: 0.06
+
+Farmer win probability: 0.70
+Coordination level: 8.27
+
+2166620800
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/douzero_ADP/landlord_up.ckpt --landlord_down  douzero_checkpoints/douzero/landlord_down_weights_2166620800.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.3467 : 0.6533
+ADP results:
+landlord : Farmers - -0.9022 : 0.9022
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.23
+Average counter big cards per game: 5.64
+Average successful coordination per game: 10.78
+Average bomb/rocket plays per game: 0.06
+Farmer win probability: 0.65
+Coordination level: 8.55
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up douzero_checkpoints/douzero/landlord_up_weights_2166620800.ckpt --landlord_down  douzero_checkpoints/douzero/landlord_down_weights_2166620800.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.3779 : 0.6221
+ADP results:
+landlord : Farmers - -0.6948 : 0.6948
+
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 9.16
+Average counter big cards per game: 5.82
+Average successful coordination per game: 10.80
+Average bomb/rocket plays per game: 0.07
+
+Farmer win probability: 0.62
+Coordination level: 8.60
+
+nohup python3 evaluate.py --landlord baselines/sl/landlord.ckpt --landlord_up baselines/sl/landlord_up.ckpt --landlord_down  douzero_checkpoints/douzero/landlord_down_weights_2166620800.ckpt >> evaluate.log 2>&1 &
+WP results:
+landlord : Farmers - 0.404 : 0.596
+ADP results:
+landlord : Farmers - -0.5246 : 0.5246
+Farmer Cooperation Statistics:
+Average consecutive plays per game: 8.70
+Average counter big cards per game: 5.36
+Average successful coordination per game: 10.36
+Average bomb/rocket plays per game: 0.02
+Farmer win probability: 0.60
+Coordination level: 8.14

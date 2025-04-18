@@ -1,12 +1,16 @@
+#配置命令行的文件
 import argparse
 
 parser = argparse.ArgumentParser(description='DouZero: PyTorch DouDizhu AI')
 
 # General Settings
+#xpid 实验唯一标识符
 parser.add_argument('--xpid', default='douzero',
                     help='Experiment id (default: douzero)')
+#训练间隔
 parser.add_argument('--save_interval', default=30, type=int,
-                    help='Time interval (in minutes) at which to save the model')    
+                    help='Time interval (in minutes) at which to save the model') 
+#奖励函数的种类   
 parser.add_argument('--objective', default='adp', type=str, choices=['adp', 'wp', 'logadp'],
                     help='Use ADP or WP as reward (default: ADP)')    
 
@@ -45,6 +49,7 @@ parser.add_argument('--max_grad_norm', default=40., type=float,
                     help='Max norm of gradients')
 
 # Optimizer settings
+#优化器参数
 parser.add_argument('--learning_rate', default=0.0001, type=float,
                     help='Learning rate')
 parser.add_argument('--alpha', default=0.99, type=float,
@@ -53,3 +58,8 @@ parser.add_argument('--momentum', default=0, type=float,
                     help='RMSProp momentum')
 parser.add_argument('--epsilon', default=1e-5, type=float,
                     help='RMSProp epsilon')
+
+
+######revise
+parser.add_argument('--cooperation_weight', type=float, default=0.3,
+                    help='Weight for farmer cooperation reward')

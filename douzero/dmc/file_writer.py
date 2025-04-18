@@ -1,16 +1,6 @@
-# Copyright (c) Facebook, Inc. and its affiliates.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+#记录实验的元数据和日志
+#FileWriter类
+#gather_metadata函数
 
 
 import copy
@@ -24,13 +14,17 @@ from typing import Dict
 
 import git
 
-
+#收集实验元数据
+#定义gather_metadata函数，返回值类型是dict
 def gather_metadata() -> Dict:
     date_start = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+    #调用datatime函数，获取当前时间
     # gathering git metadata
     try:
         repo = git.Repo(search_parent_directories=True)
+        #搜索父目录，如果当前不是
         git_sha = repo.commit().hexsha
+        #获取主目录git的哈希值
         git_data = dict(
             commit=git_sha,
             branch=repo.active_branch.name,
@@ -77,9 +71,11 @@ class FileWriter:
         # we need to copy the args, otherwise when we close the file writer
         # (and rewrite the args) we might have non-serializable objects (or
         # other nasty stuff).
+        #保存原始参数
         self.metadata['args'] = copy.deepcopy(xp_args)
         self.metadata['xpid'] = self.xpid
 
+        #初始化logging
         formatter = logging.Formatter('%(message)s')
         self._logger = logging.getLogger('palaas/out')
 

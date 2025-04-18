@@ -1,11 +1,9 @@
-"""
-Here, we wrap the original environment to make it easier
-to use. When a game is finished, instead of mannualy reseting
-the environment, we do it automatically.
-"""
+#env_utils.py
+#环境封装器
 import numpy as np
 import torch 
 
+#格式化观察数据
 def _format_observation(obs, device):
     """
     A utility function to process observations and
@@ -31,8 +29,9 @@ class Environment:
         """
         self.env = env
         self.device = device
-        self.episode_return = None
+        self.episode_return = None#累计奖励
 
+    #初始化
     def initial(self):
         initial_position, initial_obs, x_no_action, z = _format_observation(self.env.reset(), self.device)
         initial_reward = torch.zeros(1, 1)
@@ -45,7 +44,8 @@ class Environment:
             obs_x_no_action=x_no_action,
             obs_z=z,
             )
-        
+    
+    #执行动作
     def step(self, action):
         obs, reward, done, _ = self.env.step(action)
 
